@@ -8,6 +8,7 @@ charset = utf-8
 trim_trailing_whitespace = false
 insert_final_newline = false
 
-[server/**.js]
+[src/**.{js,jsx}]
 indent_style = space
 indent_size = 2
+trim_trailing_whitespace = true

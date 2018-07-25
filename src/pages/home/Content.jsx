@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 
-export default class Content extends Component {
+class Content extends Component {
   render () {
-    return <p>内容！！！！</p>
+    return <p> </p>
   }
 }
+
+export default Content
