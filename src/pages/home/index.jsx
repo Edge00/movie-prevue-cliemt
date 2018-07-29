@@ -19,17 +19,18 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    // this._getAllMovies()
+    this._getAllMovies()
   }
 
   _getAllMovies = () => {
     const { type, year } = this.state
-    const { setLoading } = this.props.context
-    request(setLoading)({
+    request({
       methods: 'get',
       url: `/api/v0/movies?type=${type}&year=${year}`
     }).then(res => {
-      console.log(res)
+      this.setState({
+        movies: res.movies
+      })
     })
   }
 
@@ -37,7 +38,7 @@ class Home extends Component {
     const { years, movies } = this.state
     return (
       <Layout>
-        <div className="flex-rot full">
+        <div className="flex-row full">
           <Menu>
             {years.map(item => (
               <MenuItem key={item}>
